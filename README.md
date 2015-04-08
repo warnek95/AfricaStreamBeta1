@@ -1,2 +1,3 @@
-# AfricaStreamBeta2
 # AfricaStreamBeta1
+
+Site de Streaming Africain en construction
