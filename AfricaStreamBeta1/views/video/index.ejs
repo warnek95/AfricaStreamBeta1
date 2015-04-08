@@ -1,0 +1,754 @@
+         <div class="header9">
+
+  <div id="carousel-example-generic" class="carousel shen9 slide" data-ride="carousel">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+  </ol>
+
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner">
+    <div class="item active">
+      <img src="/images/catalog/loup1.jpg" alt="...">
+      <div class="carousel-caption">
+          <h3> </h3>
+      </div>
+    </div>
+
+    <div class="item">
+      <img src="/images/catalog/loup7.jpg" alt="...">
+      <div class="carousel-caption">
+          <h3></h3>
+      </div>
+    </div>
+
+    <div class="item">
+      <img src="/images/catalog/loup6.jpg" alt="...">
+      <div class="carousel-caption">
+          <h3></h3>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Controls -->
+  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left"></span>
+  </a>
+  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right"></span>
+  </a>
+        </div>
+          </div>
+      <br /><br /><br /><br />
+
+
+
+
+
+
+
+
+
+
+            <div class="shen11">  <h3>LES PLUS RECENTS</h3> </div>
+
+          <br/>
+
+
+
+          <div class="container">
+            <% _.each(videosRecente, function(video) { %>
+              <% if (video) { %>
+              <div class="row">
+                <div class="col-lg-2" style="margin-left:-10px;">
+                  <div class="hover panel ">
+                    <div class="front">
+                      <div class="pad pic ">
+                        <img class="bords" src="<%= video.video.video.Link %>" width=180px height ="227" alt="logo front" />
+                      </div>
+                    </div>
+                    <div class="back ">
+                      <div class="pad bord">
+                        <br />
+                        <div class="tex" >
+                          <a href="#" > <b>resumé </b> </a>
+                          <b>
+                            <%= video.video.video.Description.slice(0,255) %>
+                            <% if (video.video.video.Description.length > 255) { %>
+                              ...
+                            <% } %>
+                           </b>
+                            <br />
+                            <a href="#" > <b>Producteur </b> </a>
+                            <%= video.video.video.DirectorName %> <%= video.video.video.DirectorLastName %>
+                            <br />
+                          <a> <b>Acteurs</b> </a>
+                            <b> : <% if (video.video.actors) { len = video.video.actors.length; %>
+                                  <% _.each(video.video.actors, function(actor , index) {  %>
+                                  <%= actor.Name %> <%= actor.LastName %> <% if(index < len-1) { %> , <% } %>
+                                  <% }) %>
+                                  <% } %> </b> <br />
+                            <a> <b> Genres</b> </a>
+                            <b> : <% if (video.video.genres) { len = video.video.genres.length; %>
+                              <% _.each(video.video.genres, function(genre , index) {  %>
+                              <%= genre.Wording %> <% if(index < len-1) { %> , <% } %>
+                              <% }) %>
+                              <% } %> </b> <br />
+
+                       </div>
+                    </div>
+                     <div class="bouton" > <a href="/video/show?vi=<%=video.video.video.VideoId%>&vn=<%=video.video.video.Title%>"> <img src="/images/play.png" class="play" ></a>
+                  </div>
+
+                </div>
+
+              </div>
+              <a href="/video/show?vi=<%=video.video.video.VideoId%>&vn=<%=video.video.video.Title%>"> <h4 class="se" ><%= video.video.video.Title %></h4> </a>
+              </div>
+              <% } %>
+            <% }) %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+
+
+
+            <div class="shen11">  <h3>LES PLUS POPULAIRES</h3> </div>
+
+          <br/>
+
+
+
+          <div class="container">
+            <% _.each(videosRecente, function(video) { %>
+              <% if (video) { %>
+              <div class="row">
+                <div class="col-lg-2" style="margin-left:-10px;">
+                  <div class="hover panel ">
+                    <div class="front">
+                      <div class="pad pic ">
+                        <img class="bords" src="<%= video.video.video.Link %>" width=180px height ="227" alt="logo front" />
+                      </div>
+                    </div>
+                    <div class="back ">
+                      <div class="pad bord">
+                        <br />
+                        <div class="tex" >
+                          <a href="#" > <b>resumé </b> </a>
+                          <b>
+                            <%= video.video.video.Description.slice(0,255) %>
+                            <% if (video.video.video.Description.length > 255) { %>
+                              ...
+                            <% } %>
+                            <br />
+                           <a> <b>Acteurs</b> </a>
+                            <b> : <% if (video.video.actors) { len = video.video.actors.length; %>
+                                  <% _.each(video.video.actors, function(actor , index) {  %>
+                                  <%= actor.Name %> <%= actor.LastName %> <% if(index < len-1) { %> , <% } %>
+                                  <% }) %>
+                                  <% } %> </b> <br />
+                            <a> <b> Genres</b> </a>
+                            <b> : <% if (video.video.genres) { len = video.video.genres.length; %>
+                              <% _.each(video.video.genres, function(genre , index) {  %>
+                              <%= genre.Wording %> <% if(index < len-1) { %> , <% } %>
+                              <% }) %>
+                              <% } %> </b> <br />
+
+
+                       </div>
+                    </div>
+                     <div class="bouton" > <a href="/video/show?vi=<%=video.video.video.VideoId%>&vn=<%=video.video.video.Title%>"> <img src="/images/play.png" class="play" ></a>
+                  </div>
+
+                </div>
+
+              </div>
+              <a href="/video/show?vi=<%=video.video.video.VideoId%>&vn=<%=video.video.video.Title%>"> <h4 class="se" ><%= video.video.video.Title %></h4> </a>
+              </div>
+              <% } %>
+            <% }) %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+
+
+
+
+                  <% if (videosPopulaire.length > 0) { %>
+            <div class="shen11">  <h3>LES PLUS POPULAIRES</h3> </div>
+        <br /><br/>
+
+
+                <div class="container">
+
+
+                   <% _.each(videosPopulaire, function(video) { %>
+              <% if (video) { %>
+              <div class="row">
+                <div class="col-lg-2" style="margin-left:-10px;">
+                  <div class="hover panel ">
+                    <div class="front">
+                      <div class="pad pic ">
+                        <img class="bords" src="<%= video.video.video.Link %>" width=180px height ="227" alt="logo front" />
+                      </div>
+                    </div>
+                    <div class="back ">
+                      <div class="pad bord">
+                        <br />
+                        <div class="tex" >
+                          <a href="#" > <b>resumé </b> </a>
+                          <b>
+                            <%= video.video.video.Description.slice(0,255) %>
+                            <% if (video.video.video.Description.length > 255) { %>
+                              ...
+                            <% } %>
+                            <br />
+                            <a> <b>Acteurs</b> </a>
+                            <b> : <% if (video.video.actors) { len = video.video.actors.length; %>
+                                  <% _.each(video.video.actors, function(actor , index) {  %>
+                                  <%= actor.Name %> <%= actor.LastName %> <% if(index < len-1) { %> , <% } %>
+                                  <% }) %>
+                                  <% } %> </b> <br />
+                            <a> <b> Genres</b> </a>
+                            <b> : <% if (video.video.genres) { len = video.video.genres.length; %>
+                              <% _.each(video.video.genres, function(genre , index) {  %>
+                              <%= genre.Wording %> <% if(index < len-1) { %> , <% } %>
+                              <% }) %>
+                              <% } %> </b> <br />
+
+                        <div class="bouton" > <a href="/video/show?vi=<%=video.video.video.VideoId%>&vn=<%=video.video.video.Title%>"> <img src="/images/play.png" class="play" ></a>
+
+                       </div>
+                    </div>
+                  </div>
+
+                </div>
+
+              </div>
+              <a href="/video/show?vi=<%=video.video.video.VideoId%>&vn=<%=video.video.video.Title%>"> <h4 class="se" ><%= video.video.video.Title %></h4> </a>
+              </div>
+              <% } %>
+            <% }) %>
+
+
+          </div>
+
+
+          </div>
+
+          <% } %>
+
+
+                  </div> </div> </div></div>
+
+
+            <div class="shen11">  <h3>NOS RECOMMANDATIONS</h3> </div>
+        <br /><br/>
+
+
+
+          <div class="container">
+
+
+
+
+    <div class="container" >
+    <div class="col-lg-12" >
+
+    <div id="demo">
+    <section id="examples">
+
+      <div id="content-1" class="content">
+        <ul>
+          <li><a href="video.html"><img class="bords" src="/images/catalog/ss15.jpg"  /></a></li>
+            <li><a href="#"><img  class="bords"src="/images/catalog/ss19.jpg"  /></a></li>
+            <li><a href="#"><img class="bords" src="/images/catalog/ss20.jpg"  /></a></li>
+            <li><a href="#"><img class="bords" src="/images/catalog/ss3.jpg"  /></a></li>
+            <li><a href="#"><img class="bords" src="/images/catalog/ss4.jpg"  /></a></li>
+            <li><a href="#"><img class="bords" src="/images/catalog/ss5.jpg"  /></a></li>
+            <li><a href="#"><img class="bords" src="/images/catalog/ss6.jpg"  /></a></li>
+            <li><a href="#"><img class="bords" src="/images/catalog/ss7.jpg"  /></a></li>
+            <li><a href="#"><img class="bords" src="/images/catalog/ss8.jpg"  /></a></li>
+            <li><a href="#"><img class="bords" src="/images/catalog/ss9.jpg"  /></a></li>
+            <li><a href="#"><img class="bords" src="/images/catalog/ss10.jpg"  /></a></li>
+            <li><a href="#"><img  class="bords" src="/images/catalog/ss11.jpg"  /></a></li>
+            <li><a href="#"><img class="bords"  src="/images/catalog/ss12.jpg"  /></a></li>
+            <li><a href="#"><img  class="bords" src="/images/catalog/ss13.jpg"  /></a></li>
+
+
+
+        </ul>
+      </div>
+      </br>
+    </section>
+
+
+  </div>
+   </div>
+
+
+
+
+
+
+          </div>
+          </div>
+
+
+                <% if (videosRecomm.length > 0) { %>
+            <div class="shen11">  <h3>NOS RECOMMANDATIONS</h3> </div>
+        <br /><br/>
+
+
+
+          <div class="container">
+
+
+
+
+    <div class="container" >
+    <div class="col-lg-12" >
+
+    <div id="demo">
+    <section id="examples">
+
+      <div id="content-1" class="content">
+        <ul>
+          <% _.each(videosRecomm, function(video) { %>
+            <% if (video) { %>
+              <li><a href="/video/show?vi=<%=video.video.video.VideoId%>&vn=<%=video.video.video.Title%>"><img class="bords" src="<%= video.video.video.Link %>"  /></a></li>
+            <% } %>
+          <% }) %>
+        </ul>
+      </div>
+      </br>
+    </section>
+
+
+  </div>
+   </div>
+   <% } %>
+
+
+
+
+
+          </div>
+          </div>
+
+                    <!--
+            <div class="shen11">  <h3>LES EXCLUS</h3> </div>
+        <br /><br/>
+
+
+
+                <div class="container">
+
+
+
+
+    <div class="container" >
+    <div class="col-lg-12" >
+
+
+
+                  <div id="demo">
+                  <section id="examples">
+                      <div id="content-3" class="content">
+                    <ul>
+
+        <li><a href="video.html"><img class="bords" src="/images/catalog/ss15.jpg"  /></a></li>
+            <li><a href="#"><img  class="bords"src="/images/catalog/ss19.jpg"  /></a></li>
+            <li><a href="#"><img class="bords" src="/images/catalog/ss20.jpg"  /></a></li>
+            <li><a href="#"><img class="bords" src="/images/catalog/ss3.jpg"  /></a></li>
+            <li><a href="#"><img class="bords" src="/images/catalog/ss4.jpg"  /></a></li>
+            <li><a href="#"><img class="bords" src="/images/catalog/ss5.jpg"  /></a></li>
+            <li><a href="#"><img class="bords" src="/images/catalog/ss6.jpg"  /></a></li>
+            <li><a href="#"><img class="bords" src="/images/catalog/ss7.jpg"  /></a></li>
+            <li><a href="#"><img class="bords" src="/images/catalog/ss8.jpg"  /></a></li>
+            <li><a href="#"><img class="bords" src="/images/catalog/ss9.jpg"  /></a></li>
+            <li><a href="#"><img class="bords" src="/images/catalog/ss10.jpg"  /></a></li>
+            <li><a href="#"><img  class="bords" src="/images/catalog/ss11.jpg"  /></a></li>
+            <li><a href="#"><img class="bords"  src="/images/catalog/ss12.jpg"  /></a></li>
+            <li><a href="#"><img  class="bords" src="/images/catalog/ss13.jpg"  /></a></li>
+
+                            </ul>
+                        </div>
+                        </br>
+                    </section>
+
+
+                    </div>
+                   </div>
+
+
+
+                              </div>
+          </div>
+
+
+          -->
+
+
+          <div class="container coloro">
+
+            <div id="Tabs" class="block demo-tabs">
+              <h2></h2>
+              <ul>
+                <li class="ddkit-anchor ddkit-opened"><a href="#" class="ddkit-trigger" rel="#tabcontent01"><H3>COMEDIE </h3></a></li>
+                <li class="ddkit-anchor"><a href="#" class="ddkit-trigger" rel="#tabcontent02"><h3>THRILLER</h3></a></li>
+                <li class="ddkit-anchor"><a href="#" class="ddkit-trigger" rel="#tabcontent03"><h3>DOCUMENTAIRE</h3></a></li>
+                <li class="ddkit-anchor"><a href="#" class="ddkit-trigger" rel="#tabcontent04"><h3>ROMANCE</h3></a></li>
+                <li class="ddkit-anchor"><a href="#" class="ddkit-trigger" rel="#tabcontent05"><h3>DRAME</h3></a></li>
+                <li class="ddkit-anchor"><a href="#" class="ddkit-trigger" rel="#tabcontent06"><h3>ANIMATION</h3></a></li>
+
+              </ul>
+              <div class="spacer"></div>
+              <div id="tabcontent01" class="ddkit-target">
+
+
+               <div class="col-lg-2">
+        <img src="/images/catalog/ss9.jpg" alt="" class="img-rounded bords">
+              <h4>Dakar Trottoir</h4>
+
+               </div>
+
+           <div class="col-lg-2">
+        <img src="/images/catalog/ss11.jpg" alt="" class="img-rounded bords">
+              <h4>Baara</h4>
+
+               </div>
+
+           <div class="col-lg-2">
+        <img src="/images/catalog/ss5.jpg" alt="" class="img-rounded bords">
+              <h4>La pirogue</h4>
+
+               </div>
+
+           <div class="col-lg-2">
+        <img src="/images/catalog/ss3.jpg" alt="" class="img-rounded bords">
+              <h4>Bamako</h4>
+
+               </div>
+
+           <div class="col-lg-2">
+        <img src="/images/catalog/ss8.jpg" alt="" class="img-rounded bords">
+              <h4>Ceddo</h4>
+
+               </div>
+
+
+
+           <div class="col-lg-2">
+        <img src="/images/catalog/ss13.jpg" alt="" class="img-rounded bords">
+              <h4>Le Fleuve</h4>
+
+               </div>
+
+
+           <div class="col-lg-2">
+        <img src="/images/catalog/ss14.jpg" alt="" class="img-rounded bords">
+              <h4>Maami</h4>
+
+               </div>
+
+           <div class="col-lg-2">
+        <img src="/images/catalog/ss15.jpg" alt="" class="img-rounded bords">
+              <h4>Guelwaar</h4>
+               </div>
+
+           <div class="col-lg-2">
+        <img src="/images/catalog/ss19.jpg" alt="" class="img-rounded bords">
+              <h4>Yaaba</h4>
+
+               </div>
+
+           <div class="col-lg-2">
+        <img src="/images/catalog/ss17.jpg" alt="" class="img-rounded bords">
+              <h4>Viva riva</h4>
+             </div>
+
+           <div class="col-lg-2">
+        <img src="/images/catalog/ss7.jpg" alt="" class="img-rounded bords">
+              <h4>Little Senegal</h4>
+
+               </div>
+
+           <div class="col-lg-2">
+        <img src="/images/catalog/ss12.jpg" alt="" class="img-rounded bords">
+              <h4>Jeppe Friday</h4>
+
+               </div>
+
+
+              </div>
+              <div id="tabcontent02" class="ddkit-target">
+
+
+
+
+              </div>
+              <div id="tabcontent03" class="ddkit-target">
+
+
+          </div>
+
+          <div id="tabcontent04" class="ddkit-target">
+
+
+              </div>
+
+              <div id="tabcontent05" class="ddkit-target">
+                <br/>
+              </div>
+
+              <div id="tabcontent06" class="ddkit-target">
+                <br/>
+              </div>
+          </div>
+
+      </div>
+
+
+          <!--
+            <div class="shen11">  <h4>-  -  - DRAME - ROMANCE - ANIMATION  </h4>  </div>
+        <br /> <br />
+
+
+        <div class="container">
+
+               <div class="col-lg-2">
+        <img src="/images/catalog/ss9.jpg" alt="" class="img-rounded bords">
+              <h4>Saint seiya Lost Canvas</h4>
+
+               </div>
+
+           <div class="col-lg-2">
+        <img src="/images/catalog/ss11.jpg" alt="" class="img-rounded">
+              <h4>Saint seiya Lost Canvas</h4>
+
+               </div>
+
+           <div class="col-lg-2">
+        <img src="/images/catalog/ss5.jpg" alt="" class="img-rounded">
+              <h4>Saint seiya Lost Canvas</h4>
+
+               </div>
+
+           <div class="col-lg-2">
+        <img src="/images/catalog/ss3.jpg" alt="" class="img-rounded">
+              <h4>Saint seiya Lost Canvas</h4>
+
+               </div>
+
+           <div class="col-lg-2">
+        <img src="/images/catalog/ss8.jpg" alt="" class="img-rounded">
+              <h4>Saint seiya Lost Canvas</h4>
+
+               </div>
+
+
+
+           <div class="col-lg-2">
+        <img src="/images/catalog/ss13.jpg" alt="" class="img-rounded">
+              <h4>Saint seiya Lost Canvas</h4>
+
+               </div>
+
+
+           <div class="col-lg-2">
+        <img src="/images/catalog/ss14.jpg" alt="" class="img-rounded">
+              <h4>Saint seiya Lost Canvas</h4>
+
+               </div>
+
+           <div class="col-lg-2">
+        <img src="/images/catalog/ss15.jpg" alt="" class="img-rounded">
+              <h4>Saint seiya Lost Canvas</h4>
+               </div>
+
+           <div class="col-lg-2">
+        <img src="/images/catalog/ss19.jpg" alt="" class="img-rounded">
+              <h4>Saint seiya Lost Canvas</h4>
+
+               </div>
+
+           <div class="col-lg-2">
+        <img src="/images/catalog/ss17.jpg" alt="" class="img-rounded">
+              <h4>Saint seiya Lost Canvas</h4>
+             </div>
+
+           <div class="col-lg-2">
+        <img src="/images/catalog/ss7.jpg" alt="" class="img-rounded">
+              <h4>Saint seiya Lost Canvas</h4>
+
+               </div>
+
+           <div class="col-lg-2">
+        <img src="/images/catalog/ss12.jpg" alt="" class="img-rounded">
+              <h4>Saint seiya Lost Canvas</h4>
+
+               </div>
+
+
+
+   </div>
+   -->
+
+  </div> </div> </div></div>
+
+   <br />
+
+      <div class="container footer">
+          <div class="row">
+            <div class="col-lg-4 shen12">
+          <IMG SRC="/images/logo3.png" WIDTH=130  HEIGHT=50  >
+          </div>
+
+            <div class="col-lg-2 shen14 ">
+                © Copyright 2014 Africastream Partners Limited . All rights reserved.
+            </div>
+          </div>
+
+
+      </div>
+
+
+
+
+
+
+
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+  <script>window.jQuery || document.write('<script src="/js/dependencies/jquery-1.11.0.min.js"><\/script>')</script>
+
+  <!-- plugin script -->
+  <script src="/js/dependencies/jquery.mThumbnailScroller.min.js"></script>
+
+  <script>
+    (function($){
+      $(window).load(function(){
+
+        var loopDuration=6000;
+
+        $("#content-1").mThumbnailScroller({
+          callbacks:{
+            onInit:function(){
+              $("#content-1").mThumbnailScroller("scrollTo","right",{duration:loopDuration/2,easing:"easeInOutSmooth"});
+            },
+            onTotalScroll:function(){
+              if($(this).data("mTS").trigger==="external"){
+                $("#content-1").mThumbnailScroller("scrollTo","left",{duration:loopDuration/2,easing:"easeInOutSmooth"});
+              }
+            }
+          }
+        });
+
+      });
+    })(jQuery);
+  </script>
+
+
+  <script>
+    (function($){
+      $(window).load(function(){
+
+        $("#content-1").mThumbnailScroller({
+          axis:"y",
+          type:"hover-precise"
+        });
+
+        $("#content-2").mThumbnailScroller({
+          axis:"y",
+          type:"click-thumb",
+          theme:"buttons-out"
+        });
+
+        $("#content-3").mThumbnailScroller({
+          type:"click-50",
+          theme:"buttons-in"
+        });
+
+        $("#content-4").mThumbnailScroller({
+          theme:"hover-classic"
+        });
+
+        $("#content-5").mThumbnailScroller({
+          type:"hover-precise"
+        });
+
+        $("#content-6").mThumbnailScroller({
+          type:"click-25",
+        });
+
+      });
+    })(jQuery);
+  </script>
+
+
+  <script>
+    (function($){
+      $(window).load(function(){
+
+        $("#content-3").mCustomScrollbar({
+          scrollButtons:{enable:true},
+          theme:"light-thick",
+          scrollbarPosition:"outside"
+        });
+
+        $("#content-4").mCustomScrollbar({
+          theme:"rounded-dots",
+          scrollInertia:400
+        });
+
+        $("#content-5").mCustomScrollbar({
+          axis:"x",
+          theme:"dark-thin",
+          autoExpandScrollbar:true,
+          advanced:{autoExpandHorizontalScroll:true}
+        });
+
+        $("#content-6").mCustomScrollbar({
+          axis:"x",
+          theme:"light-3",
+          advanced:{autoExpandHorizontalScroll:true}
+        });
+
+        $("#content-7").mCustomScrollbar({
+          scrollButtons:{enable:true},
+          theme:"3d-thick"
+        });
+
+        $("#content-8").mCustomScrollbar({
+          axis:"yx",
+          scrollButtons:{enable:true},
+          theme:"3d",
+          scrollbarPosition:"outside"
+        });
+
+        $("#content-9").mCustomScrollbar({
+          scrollButtons:{enable:true,scrollType:"stepped"},
+          keyboard:{scrollType:"stepped"},
+          mouseWheel:{scrollAmount:188},
+          theme:"rounded-dark",
+          autoExpandScrollbar:true,
+          snapAmount:188,
+          snapOffset:65
+        });
+
+      });
+    })(jQuery);
+  </script>

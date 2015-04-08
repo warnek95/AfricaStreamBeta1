@@ -1,0 +1,76 @@
+<br />
+<br /> 
+   
+      
+      
+
+      
+      
+<div class="container">
+	<div class="row">
+		<center><h2>Inscrivez vous</h2></center>
+	</div>
+    
+    <div class="row">
+        <div class="col-sm-offset-4 col-sm-4">
+            <form method="post" action="/user/create">
+				<div class="form-group">
+        			<label for="validate-text">Nom</label>
+					<div class="input-group">
+						<input type="text" class="form-control" name="LastName" id="prenom" placeholder="Nom" required>
+						<span class="input-group-addon danger"><span class="glyphicon glyphicon-user"></span></span>
+					</div>
+				</div>
+				<div class="form-group">
+        			<label for="validate-phone">Prenom</label>
+					<div class="input-group" data-validate="phone">
+						<input type="text" class="form-control" name="Name" id="Name" placeholder=" Prenom" required>
+						<span class="input-group-addon danger"><span class="glyphicon glyphicon-user"></span></span>
+					</div>
+				</div>
+					<div class="form-group">
+        			<label for="validate-text">Login</label>
+					<div class="input-group">
+						<input type="text" class="form-control" name="Pseudo" id="Pseudo" placeholder="Pseudo" required>
+						<span class="input-group-addon danger"><span class="glyphicon glyphicon-user"></span></span>
+					</div>
+				</div>
+				<div class=
+				
+	
+				
+						<div class="form-group">
+        			<label for="validate-email">Mot de passe</label>
+					<div class="input-group" data-validate="mdp">
+						<input type="password" class="form-control" name="mdp" id="mdp" placeholder=" Password" required>
+						<span class="input-group-addon danger"><span class="glyphicon glyphicon-user"></span></span>
+					</div>
+				</div>
+				
+						<div class="form-group">
+        			<label for="validate-email">Confirmation du Mot de passe</label>
+					<div class="input-group" data-validate="mdp">
+						<input type="password" class="form-control" name="mdp2" id="mdp2" placeholder=" Password" required>
+						<span class="input-group-addon danger"><span class="glyphicon glyphicon-user"></span></span>
+					</div>
+				</div>
+				
+				<div class="form-group">
+        			<label for="validate-email">Email</label>
+					<div class="input-group" data-validate="email">
+						<input type="text" class="form-control" name="Email" id="Email" placeholder=" Email" required>
+						<span class="input-group-addon danger"><span class="glyphicon glyphicon-envelope"></span></span>
+					</div>
+				</div>
+				
+				
+				
+    		
+            	<div class="form-group">
+        		
+                <button type="submit" class="btn btn-primary col-xs-12" >Submit</button>
+                <input type="hidden" name="_csrf" value="<%= _csrf %>" />
+            </form>
+        </div>
+    </div>
+</div>

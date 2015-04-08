@@ -1,0 +1,145 @@
+ <br /> <br /> <br /><br /><br />
+      <div class="container" >
+      		
+			
+			
+
+		<div id="video" >
+
+			<div id="">	<h2 class="centerSpe"> <%= video.video[0].Title %> </h2> 
+			
+				<div class="flowplayer" width="1000" height="500">
+      <video>
+         <source type="video/mp4" src="<%= video.video[0].VideoLink%>">
+      </video>
+   </div>
+			</div>
+			</div>
+			
+			<div class="container">
+			
+
+		<div id="imagevideo" >
+		
+		<div id="affiche"> <img src="<%= video.video[0].Link%>"/> </div>
+	
+		
+		<div id="description"><b>  Description : <%= video.video[0].Description %></b> </div>
+
+
+
+
+
+		</div>
+
+		</div>
+
+		<div>
+			<form action="/post/create" method="post">
+				<input type="hidden" name="Id_Video" value="<%= video.video[0].VideoId %>">
+				<textarea rows="6" cols="50" name="Wording" placeholder="Tapez votre commentaire ici" class="leftSpacer"></textarea>
+				 <input type="submit" value="Submit" class="btn btn-default unspaceTop">
+			</form>
+		</div>
+
+		<div class="container">
+		<% _.each(video.comments, function(comment) { %>
+              <% if (comment) { %>
+              	<b><%= comment.Poster %></b> <br/>
+              		<%= comment.Wording %>  <br/><br/><br/>
+              <% } %>
+        <% }) %>
+
+    </div>
+    
+
+	      	<% if (videosRecomm.length > 0) { %>  
+      		  <div class="shen18">  <h3>Nos recomendations</h3> </div>
+				<br /><br/>			
+
+				
+		<div class="" >
+		<div class="col-lg-12">
+		
+		
+		
+      						<div id="demo">
+									<section id="examples">
+											<div id="content-3" class="content">
+										<ul>
+					<% _.each(videosRecomm, function(video) { %>
+			            <% if (video) { %>
+			              <li><a href="/video/show?vi=<%=video.video.VideoId%>&vn=<%=video.video.Title%>"><img class="bords" src="<%= video.video.Link %>"  /></a></li>
+			            <% } %>
+			        <% }) %>
+
+      		
+      		
+      				</div>
+      				</section>
+      				</div>
+      				</ul>
+		
+		
+		</div>
+		</div>
+		<% } %>
+		
+	   
+   <br />
+   	
+   
+
+
+
+<!-- Google CDN jQuery with fallback to local -->
+	<script>window.jQuery || document.write('<script src="/js/dependencies/jquery-1.11.0.min.js"><\/script>')</script>
+	
+	<!-- plugin script -->
+	<script src="/js/dependencies/jquery.mThumbnailScroller.min.js"></script>
+	
+	<script>
+		(function($){
+			$(window).load(function(){
+				
+				$("#content-1").mThumbnailScroller({
+					axis:"y",
+					type:"hover-precise"
+				});
+				
+				$("#content-2").mThumbnailScroller({
+					axis:"y",
+					type:"click-thumb",
+					theme:"buttons-out"
+				});
+				
+				$("#content-3").mThumbnailScroller({
+					type:"click-50",
+					theme:"buttons-in"
+				});
+				
+				$("#content-4").mThumbnailScroller({
+					theme:"hover-classic"
+				});
+				
+				$("#content-5").mThumbnailScroller({
+					type:"hover-precise"
+				});
+				
+				$("#content-6").mThumbnailScroller({
+					type:"click-25",
+				});
+				
+			});
+		})(jQuery);
+	</script>
+
+
+  <script type="text/javascript"> 
+    $('head').append('<link rel="stylesheet" type="text/css" href="/styles2/style4.css">');
+  </script>
+
+
+
+         <!-- flowplayer.js -->
+         <script type="text/javascript" src="/flowplayer/flowplayer.min.js"></script>
